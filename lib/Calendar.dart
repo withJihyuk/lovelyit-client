@@ -6,7 +6,7 @@ import 'package:intl/intl.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class CalendarRoute extends StatefulWidget {
-  const CalendarRoute({Key? key}) : super(key: key);
+  const CalendarRoute({super.key});
 
   @override
   State<CalendarRoute> createState() => _CalendarRouteState();
@@ -26,22 +26,25 @@ class _CalendarRouteState extends State<CalendarRoute> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          elevation: 0,
+
+
           backgroundColor: Colors.grey.shade900,
           titleTextStyle: const TextStyle(
               color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
           centerTitle: true,
           title: const Text("캘린더"),
           leadingWidth: 55,
-          leading: Padding(
-            padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-            child: IconButton(
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => MyHomePage(title: 'home')));
-              },
-              icon: SvgPicture.asset('images/back.svg'),
-            ),
-          ),
+          // leading: Padding(
+          //   padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
+          //   child: IconButton(
+          //     onPressed: () {
+          //       Navigator.push(context,
+          //           MaterialPageRoute(builder: (context) => MyHomePage(title: 'home')));
+          //     },
+          //     icon: SvgPicture.asset('images/back.svg'),
+          //   ),
+          // ),
         ),
         body: Column(
           children: [

@@ -1,8 +1,5 @@
 import "package:flutter/material.dart";
-import 'package:intl/date_symbol_data_local.dart';
-import 'package:intl/intl.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:practice/main.dart';
 
 class WriteDocument extends StatefulWidget {
   const WriteDocument({Key? key}) : super(key: key);
@@ -17,19 +14,20 @@ class _SecondRouteState extends State<WriteDocument> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          elevation: 0,
           backgroundColor: Colors.grey.shade900,
           titleTextStyle: const TextStyle(
               color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
           centerTitle: true,
           title: const Text("작성"),
           leadingWidth: 55,
-          leading: Padding(padding: EdgeInsets.fromLTRB(10, 0, 0, 0),child: IconButton(
-            onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => MyHomePage(title: 'home' )));
-            },
-            icon: SvgPicture.asset('images/back.svg'),
-          ),),
+          // leading: Padding(padding: EdgeInsets.fromLTRB(10, 0, 0, 0),child: IconButton(
+          //   onPressed: () {
+          //     Navigator.push(context,
+          //         MaterialPageRoute(builder: (context) => MyHomePage(title: 'home' )));
+          //   },
+          //   icon: SvgPicture.asset('images/back.svg'),
+          // ),),
         ),
         body: Center(
             child: Align(
@@ -64,6 +62,7 @@ class _SecondRouteState extends State<WriteDocument> {
                       child: Container(
                         height: 200.0,
                         width: double.infinity,
+
                         child: Column(
                           children: [
                             const Align(
