@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:practice/main2.dart';
+import 'package:practice/HomePage.dart';
 
 import 'Calendar.dart';
 import 'WriteDocument.dart';
@@ -34,38 +34,40 @@ class NavBar extends StatefulWidget {
 }
 
 class _NavBarState extends State<NavBar> {
-  int currentIndex =0;
+  int currentIndex = 0;
   final screens = [
-
     CalendarRoute(),
-    WriteDocument(),
     MyHomePage(),
+    WriteDocument(),
   ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: screens[currentIndex],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: currentIndex,
-        selectedItemColor: Colors.brown,
-        onTap: (index) => setState(() =>currentIndex = index),
-
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.calendar_month),
-            label: '캘린더',
+        body: screens[currentIndex],
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+            border:
+                Border(top: BorderSide(color: Colors.grey.shade700, width: 1.0)), // 라인효과
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.book),
-            label: '작성하기',
+          child: BottomNavigationBar(
+            currentIndex: currentIndex,
+            selectedItemColor: Colors.brown,
+            onTap: (index) => setState(() => currentIndex = index),
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(Icons.calendar_month),
+                label: '캘린더',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.home),
+                label: '홈',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(Icons.edit),
+                label: '작성하기',
+              ),
+            ],
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home),
-            label: '홈',
-          ),
-        ],
-      ),
-
-    );
+        ));
   }
 }
