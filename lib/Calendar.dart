@@ -1,9 +1,7 @@
 import "package:flutter/material.dart";
-import 'package:practice/main.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class CalendarRoute extends StatefulWidget {
   const CalendarRoute({super.key});
@@ -26,6 +24,7 @@ List<Event> _getEventsForDay(DateTime day) {
 
 
 class _CalendarRouteState extends State<CalendarRoute> {
+
   late DateFormat dateFormat;
   late DateFormat timeFormat;
 
@@ -34,6 +33,8 @@ class _CalendarRouteState extends State<CalendarRoute> {
     super.initState();
     initializeDateFormatting();
   }
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -62,9 +63,9 @@ class _CalendarRouteState extends State<CalendarRoute> {
           child: Icon(Icons.add),
           backgroundColor: Colors.brown,
         ),
+
         body: Column(
           children: [
-
             TableCalendar(
                 locale: 'ko_KR',
                 daysOfWeekHeight:30,
@@ -80,9 +81,9 @@ class _CalendarRouteState extends State<CalendarRoute> {
                   markerDecoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
                   todayDecoration: BoxDecoration(color: Colors.brown, shape: BoxShape.circle)
                 )),
-            s
-
           ],
+          //해당 페이지 디자인 필요.
         ));
+
   }
 }
