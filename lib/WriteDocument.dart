@@ -21,13 +21,11 @@ class _SecondRouteState extends State<WriteDocument> {
           centerTitle: true,
           title: const Text("작성"),
           leadingWidth: 55,
-          // leading: Padding(padding: EdgeInsets.fromLTRB(10, 0, 0, 0),child: IconButton(
-          //   onPressed: () {
-          //     Navigator.push(context,
-          //         MaterialPageRoute(builder: (context) => MyHomePage(title: 'home' )));
-          //   },
-          //   icon: SvgPicture.asset('images/back.svg'),
-          // ),),
+          leading: Padding(padding: EdgeInsets.fromLTRB(10, 0, 0, 0),child: IconButton(
+            onPressed: () {
+            },
+            icon: SvgPicture.asset('images/back.svg'),
+          ),),
         ),
         body: Center(
             child: Align(
@@ -50,7 +48,7 @@ class _SecondRouteState extends State<WriteDocument> {
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(0, 0, 0, 110),
                       child: SvgPicture.asset(
-                        'images/hamster.svg',
+                        'images/hamster_happy.svg',
                         width: 100,
                         height: 200,
                       ),
@@ -58,6 +56,7 @@ class _SecondRouteState extends State<WriteDocument> {
                 Align(
                     alignment: Alignment.bottomCenter,
                     child: Card(
+                      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(13.0)),
                       color: Colors.grey.shade800,
                       child: Container(
                         height: 200.0,
@@ -79,7 +78,21 @@ class _SecondRouteState extends State<WriteDocument> {
                             SingleChildScrollView(
                               scrollDirection: Axis.horizontal,
                               child: Row(
-                                children: [
+                                children: [Padding(
+                                    padding:
+                                    const EdgeInsets.fromLTRB(20, 20, 0, 0),
+                                    child: Container(
+                                      height: 70,
+                                      width: 70,
+                                      alignment: Alignment.center,
+                                      decoration: BoxDecoration(
+                                          color: Colors.grey.shade700,
+                                          shape: BoxShape.circle),
+                                      child: SvgPicture.asset(
+                                          'images/hamster_happy.svg',
+                                          width: 40,
+                                          height: 40),
+                                    )),
                                   Padding(
                                       padding:
                                       const EdgeInsets.fromLTRB(20, 20, 0, 0),
@@ -91,7 +104,7 @@ class _SecondRouteState extends State<WriteDocument> {
                                             color: Colors.grey.shade700,
                                             shape: BoxShape.circle),
                                         child: SvgPicture.asset(
-                                            'images/hamster_2.svg',
+                                            'images/hamster_angry.svg',
                                             width: 40,
                                             height: 40),
                                       )),
@@ -106,7 +119,7 @@ class _SecondRouteState extends State<WriteDocument> {
                                             color: Colors.grey.shade700,
                                             shape: BoxShape.circle),
                                         child: SvgPicture.asset(
-                                            'images/hamster_3.svg',
+                                            'images/hamster_sad.svg',
                                             width: 40,
                                             height: 40),
                                       )),
@@ -120,7 +133,10 @@ class _SecondRouteState extends State<WriteDocument> {
                                         decoration: BoxDecoration(
                                             color: Colors.grey.shade700,
                                             shape: BoxShape.circle),
-                                        child: Text('Main'),
+                                        child: SvgPicture.asset(
+                                            'images/hamster_wearout.svg',
+                                            width: 40,
+                                            height: 40),
                                       )),
                                   Padding(
                                       padding:
@@ -132,7 +148,10 @@ class _SecondRouteState extends State<WriteDocument> {
                                         decoration: BoxDecoration(
                                             color: Colors.grey.shade700,
                                             shape: BoxShape.circle),
-                                        child: Text('Main'),
+                                        child: SvgPicture.asset(
+                                            'images/hamster_fine.svg',
+                                            width: 40,
+                                            height: 40),
                                       ))
                                 ],
                               ),

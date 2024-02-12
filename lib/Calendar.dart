@@ -1,7 +1,12 @@
 import "package:flutter/material.dart";
+import 'package:flutter_svg/svg.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svg_provider;
+
+import 'HomePage.dart';
+
 
 class CalendarRoute extends StatefulWidget {
   const CalendarRoute({super.key});
@@ -47,16 +52,14 @@ class _CalendarRouteState extends State<CalendarRoute> {
               color: Colors.white, fontSize: 20, fontWeight: FontWeight.bold),
           centerTitle: true,
           title: const Text("캘린더"),
-          leadingWidth: 55, // leading: Padding(
-          //   padding: EdgeInsets.fromLTRB(10, 0, 0, 0),
-          //   child: IconButton(
-          //     onPressed: () {
-          //       Navigator.push(context,
-          //           MaterialPageRoute(builder: (context) => MyHomePage(title: 'home')));
-          //     },
-          //     icon: SvgPicture.asset('images/back.svg'),
-          //   ),
-          // ),
+          leadingWidth: 55,
+          leading: Padding(padding: EdgeInsets.fromLTRB(10, 0, 0, 0),child: IconButton(
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => MyHomePage()));
+            },
+            icon: SvgPicture.asset('images/back.svg'),
+          ),),
         ),
         floatingActionButton: FloatingActionButton(
           onPressed: (){},
@@ -74,12 +77,14 @@ class _CalendarRouteState extends State<CalendarRoute> {
                 lastDay: DateTime.utc(2030, 3, 14),
                 focusedDay: DateTime.now(),
                 eventLoader: _getEventsForDay,
-                calendarStyle: const CalendarStyle(
+
+                calendarStyle: CalendarStyle(
                   defaultTextStyle: TextStyle(color: Colors.white),
                   weekNumberTextStyle: TextStyle(color: Colors.red),
                   weekendTextStyle: TextStyle(color: Colors.brown),
-                  markerDecoration: BoxDecoration(color: Colors.white, shape: BoxShape.circle),
-                  todayDecoration: BoxDecoration(color: Colors.brown, shape: BoxShape.circle)
+
+                  todayDecoration: BoxDecoration(color: Colors.brown, shape: BoxShape.circle),
+
                 )),
           ],
           //해당 페이지 디자인 필요.
